@@ -1,5 +1,5 @@
 #labels Featured
-#Code benchmarks 
+Code benchmarks 
 
 = Introduction =
 
@@ -9,7 +9,7 @@ Some of the benchmarks are available as test cases for the code (routines TESTxx
 
 = Benchmarks =
 
-# The transport coefficients of a hydrogen plasma (TEST1)
+The transport coefficients of a hydrogen plasma (TEST1)
 
 || THE ION HEAT FLUX || NEOART || Analytic ||
 || ION TEMPERATURE GRADIENT || -6.81574E-01 || -0.68 ||
