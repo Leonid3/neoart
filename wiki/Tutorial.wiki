@@ -12,8 +12,8 @@ only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes 
 == Python ==
 
 {{{
->>> nc = [1, 1]
->>> zsp = [[-1], [1]]
+>>> nc = [1, 1] # number of ionisation stages per species
+>>> zsp = [[-1], [1]] # charge for each ionisation stage
 >>> mass = [9.1096e-31, 1.6727e-27] # kg
 >>> density = [[5], [5]] # 1e19 m^-3
 >>> temperature = [10, 10] # keV
@@ -27,14 +27,14 @@ only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes 
 == Matlab ==
 
 {{{
-ns = 2;
-nc = [1, 1];
-zsp = [-1; 1];
+ns = 2; % number of species
+nc = [1, 1]; % number of ionisation stages per species
+zsp = [-1; 1]; % charge for each ionisation stage
 mass = [9.1096e-31, 1.6727e-27]; % kg
 density = [5; 5]; % 1e19 m^-3
 temperature = [10, 10];
 forces = zeros(2,1,2);
-forces(2,1,2) = 1; % ion temperature  kg
+forces(2,1,2) = 1; % ion temperature  gradient
 isel = 2;
 rho = 0.000165;
 RN = 1.65;
