@@ -1,0 +1,47 @@
+#summary Guide to getting started with Neoart
+
+= Introduction =
+
+Add your content here.
+
+= Simple example =
+
+Two species (electron and proton) with equal temperature and density. The
+only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes are evaluated in the banana-plateau regime.  Circular geometry is used.
+
+== Python ==
+
+{{{
+>>> nc = [1, 1]
+>>> zsp = [[-1], [1]]
+>>> mass = [9.1096e-31, 1.6727e-27] # kg
+>>> density = [[5], [5]] # 1e19 m^-3
+>>> temperature = [10, 10] # keV
+>>> forces = np.zeros((2,1,2))
+>>> forces[1,0,1] = 1 # ion temperature gradient
+>>> g = dict(rho=0.000165, Rmag=1.65, q=2, bn=2.5)
+>>> coeff = neoart.neoart(nc, zsp, mass, temperature, density, forces,
+        geometry=g, contribution='bp')
+}}}
+
+== Matlab ==
+
+{{{
+ns = 2;
+nc = [1, 1];
+zsp = [-1; 1];
+mass = [9.1096e-31, 1.6727e-27]; % kg
+density = [5; 5]; % 1e19 m^-3
+temperature = [10, 10];
+forces = zeros(2,1,2);
+forces(2,1,2) = 1; % ion temperature  kg
+isel = 2;
+rho = 0.000165;
+RN = 1.65;
+BN = 2.5;
+q = 2;
+ic = 2;
+eparr = 0;
+[c1, c2, c3, c4] = neoart(ns, nc, mass, temperature, zsp, density, ...
+                    forces, isel, rho, RN, BN, q, ic, eparr);
+}}}
