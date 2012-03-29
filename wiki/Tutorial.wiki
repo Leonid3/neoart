@@ -45,3 +45,18 @@ eparr = 0;
 [c1, c2, c3, c4] = neoart(ns, nc, mass, temperature, zsp, density, ...
                     forces, isel, rho, RN, BN, q, ic, eparr);
 }}}
+
+
+= Contribution =
+
+If you want to contribute to Neoart make sure to conform the following coding standards.
+
+  # Use Fortran 90. (see issue 4)
+  # Name source files lowercase with an extension `.f90`. Example:
+  {{{
+   foo.f90
+   foo_bar.f90
+  }}}
+  # Use 2 spaces for indention. Do not mix tabs and spaces.
+  # Do not leave whitespaces at the end of the lines.
+  # Use lowercase variable names.
