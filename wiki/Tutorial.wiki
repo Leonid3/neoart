@@ -80,5 +80,5 @@ Comment every subroutine, explain briefly what it does, what are the input and o
 !>          nn   : array(3,3) containing the field particle friction
 !>                 coefficients
 !--------------------------------------------------------------------
-}}}
 subroutine menn(ta, tb, ma, mb, mm, nn)
+}}}
