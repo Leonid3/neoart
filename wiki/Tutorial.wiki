@@ -51,6 +51,7 @@ eparr = 0;
 
 If you want to contribute to Neoart make sure to conform the following coding standards.
 
+== Code layout ==
   # Use Fortran 90. (see issue 4)
   # Name source files lowercase with an extension `.f90`. Example:
   {{{
@@ -58,5 +59,26 @@ If you want to contribute to Neoart make sure to conform the following coding st
    foo_bar.f90
   }}}
   # Use 2 spaces for indention. Do not mix tabs and spaces.
+  # Limit the lines to 69 characters.
   # Do not leave whitespaces at the end of the lines.
   # Use lowercase variable names.
+
+== Subroutine headers ==
+
+Comment every subroutine, explain briefly what it does, what are the input and output variables. Example from `menn.f90`:
+{{{
+!--------------------------------------------------------------------
+!> subroutine that calculates the friction coefficients m^ab and 
+!> n^ab 
+!>
+!> input    ta   : the temperature of species a
+!>          tb   : the temperature of species b
+!>          ma   : the mass of species a
+!>          mb   : the mass of species b
+!> output   mm   : array(3,3) containing the test particle friction
+!>                 coefficients
+!>          nn   : array(3,3) containing the field particle friction
+!>                 coefficients
+!--------------------------------------------------------------------
+}}}
+subroutine menn(ta, tb, ma, mb, mm, nn)
