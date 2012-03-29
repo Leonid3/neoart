@@ -7,7 +7,7 @@ Add your content here.
 = Simple example =
 
 Two species (electron and proton) with equal temperature and density. The
-only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes are evaluated in the banana-plateau regime.  Circular geometry is used.
+only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes are evaluated in the banana-plateau regime.  Circular geometry is used (issue 11).
 
 == Python ==
 
