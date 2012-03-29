@@ -9,6 +9,69 @@ Add your content here.
 Two species (electron and proton) with equal temperature and density. The
 only non-zero thermodynamic force is the ion temperature gradient.  The  fluxes are evaluated in the banana-plateau regime.  Circular geometry is used (issue 11).
 
+== Fortran 90 ==
+
+{{{
+! set the parameters for the circular geometry
+rho = 0.05
+e = 1e-4
+q = 2.
+rn = 1.65
+bn = 2.5
+!copy them into the values used by the code
+call circgeom(1,rho,rn,e,q,bn)
+!set the electric field to zero 
+eparr = 0. 
+!use the circular geometry approximation
+isel = 2
+!set the accuracy
+eps = 1e-5
+!force the banana regime in the calculation of the transport
+!fluxes (in the calculation of the viscosity)
+nreg = 1
+!the number of legendre harmonics
+nleg = 3
+!use energy scattering in the calc. of viscosity
+nenergy = 1
+!switch off ion-electron collisions
+ncof = 0
+!in the first call the matrices have to be calculated
+neofrc = .false.
+!calculate the banana plateau contribution
+ic = 1
+
+!the number of species is 2
+ns = 2
+!ions and electrons have only one charge 
+nc(1) = 1
+nc(2) = 1
+!the mass of the electron and proton
+m(1) = 9.1096e-31
+m(2) = 1.6727e-27
+!the charge of the electron and ion
+zsp(1,1) = -1
+zsp(2,1) = 1
+!the density of the species in 10^19 m^-3
+den(1,1) = 5.
+den(2,1) = 5. 
+!the temperature in kev
+t(1) = 10.
+t(2) = 10.
+
+!the thermodynamic forces      
+do i = 1, ns
+  do j = 1, nc(i)
+    ds(i,j,1) = 0.
+    ds(i,j,2) = 0.
+  enddo
+enddo
+ds(1,1,1) = 1.
+
+call neoart(ns,nc,nar,nzm,zsp,m,t,den,ds,rho,eps, &
+            isel,ishot,nreg,sigma,nleg,nenergy,ncof, &
+            neogeo,neofrc,ic,eparr,cff1)
+}}}
+
 == Python ==
 
 {{{
