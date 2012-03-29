@@ -65,7 +65,8 @@ If you want to contribute to Neoart make sure to conform the following coding st
 
 == Subroutine headers ==
 
-Comment every subroutine, explain briefly what it does, what are the input and output variables. Example from `menn.f90`:
+Comment every subroutine, explain briefly what it does, what are the input and output variables. Example from 
+[http://code.google.com/p/neoart/source/browse/trunk/src/menn.f90 menn.f90]:
 {{{
 !--------------------------------------------------------------------
 !> subroutine that calculates the friction coefficients m^ab and 
