@@ -1,4 +1,6 @@
 #summary Guide to getting started with Neoart
+#labels Featured
+
 
 = Introduction =
 
