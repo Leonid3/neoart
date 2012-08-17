@@ -11,7 +11,7 @@ Neoart computes the neoclassical fluxes as outputs given the thermodynamic force
 
 The most convenient way to define inputs is to use the inverse aspect ratio as the flux surface label.  Then the gradient length scales are:
 {{{
-1/L = 1/ A d(A)/d(eps) 
+1 / L = 1/ A d(A)/d(eps) 
 }}}
 
 = Simple example =
