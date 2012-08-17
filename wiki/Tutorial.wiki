@@ -4,7 +4,10 @@
 
 = Introduction =
 
-Add your content here.
+In order to compute neoclassical fluxes the following parameters are neccessary
+  * temperature and density profiles
+  * magnetic geometry
+  * loop voltage
 
 = Simple example =
 
