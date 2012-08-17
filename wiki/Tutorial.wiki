@@ -4,10 +4,15 @@
 
 = Introduction =
 
-In order to compute neoclassical fluxes the following parameters are neccessary
-  * temperature and density profiles
+Neoart computes the neoclassical fluxes as outputs given the thermodynamic forces as inputs.  In order to compute neoclassical fluxes the following parameters are necessary
+  * temperature and density values and their gradient length scales for all species
   * magnetic geometry
   * loop voltage
+
+The most convenient way to define inputs is to use the inverse aspect ratio as the flux surface label.  Then the gradient length scales are:
+{{{
+1/L = 1/ A d(A)/d(eps) 
+}}}
 
 = Simple example =
 
